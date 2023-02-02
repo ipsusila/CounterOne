@@ -9,6 +9,8 @@
 #endif
 */
 
+extern void __co_initVars();
+
 class CounterOne
 {
 public:
@@ -145,6 +147,7 @@ public:
         TCNT2 = 0;
         mWholeCount = 0;
         mWholeSecs = 0;
+        __co_initVars();
         resume();
     }
 

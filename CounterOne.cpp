@@ -9,6 +9,13 @@ void (*CounterOne::tickCallback)() = nop;
 volatile long gCount = 0;
 // called every 8 ms
 volatile byte tick = 0;
+
+void __co_initVars()
+{
+    tick = 0;
+    gCount = 0;
+}
+
 void isrTimerTwoTicker()
 {
     // called every 8 ms * (1000/8),
